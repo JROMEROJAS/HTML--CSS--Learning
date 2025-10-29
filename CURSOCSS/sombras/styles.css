@@ -7,12 +7,15 @@ body {
 
 .box {
     background: grey;
-    width: 300px;
-    height: 400px;
+    width: 400px;
+    height: 450px;
     border-radius: 20px;
     margin: auto;
     margin-top: 50px;
     box-shadow: 20px 20px 50px 10px black; /* EN ESTE CASO LE ESTAMOS DANDO UNA SOMBRA A ESTA CAJA QUE TENEMOS, EL PARAMETRO ES CUANTOS PIXELES QUIERO QUE CORRA HACIA LA DERECHA, EL SEGUNDO ES CUANTO SE CORRE HACIA ABAJO OSEA DE FORMA VERTIFICAL, DESPUES CUANTO QUIERO YO QUE SEA EL DESENFOQUE O DIFUMINADO, DESPUES CUANTO QUIERO QUE SE EXPANDA, LUEGO EL COLOR.*/
+    padding: 20px;
+    padding-top: 10px;
+    box-sizing: border-box;
 }
 
 img {
@@ -20,6 +23,7 @@ img {
     height: 240px;
     display: block;  /* Hace que la imagen se comporte como bloque. */
     margin: 0 auto;
+    border-radius: 100%;
 }
 
 h1 {
@@ -29,7 +33,7 @@ h1 {
 
 h2 {
     font-family: sans-serif;
-    text-align: center;
+    
 }
 
 p {
