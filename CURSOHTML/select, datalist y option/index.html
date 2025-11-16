@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como usar los select, datalist y option</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>SELECT, DATALIST Y OPTION</h1>
+
+    <div class="form_input">
+        <label for="nombre">Nombre Completo</label>
+        <input type="text" placeholder="Juan Romero" id="nombre">
+    </div>
+
+    <div class="form_input">
+        <label for="email">Email</label>
+        <input type="email" placeholder="ejemplo@gmail.com" id="email">
+    </div>
+
+    <div class="form_input">
+        <select name="type-of-user">
+            <option value="user1">Option 1</option>
+            <option value="user2">Option 2</option>
+            <option value="user3">Option 3</option>
+        </select>
+    </div>
+
+    <div class="form_input">
+        <label for="descripcion">Descripcion</label>
+        <textarea placeholder="Ingrese la descripcion..." id="descripcion"></textarea>
+    </div>
+
+    <div class="form_input">
+        <label for="terminos">Acepto los terminos y condiciones</label>
+        <input type="checkbox" id="terminos" class="checkbox"></input>
+    </div>
+</body>
+</html>
