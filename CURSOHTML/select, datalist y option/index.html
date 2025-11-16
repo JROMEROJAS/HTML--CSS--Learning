@@ -9,6 +9,7 @@
 <body>
     <h1>SELECT, DATALIST Y OPTION</h1>
 
+    <!--SIMPLE INPUT-->
     <div class="form_input">
         <label for="nombre">Nombre Completo</label>
         <input type="text" placeholder="Juan Romero" id="nombre">
@@ -19,22 +20,41 @@
         <input type="email" placeholder="ejemplo@gmail.com" id="email">
     </div>
 
+    <!--SELECT Y OPTION-->
     <div class="form_input">
-        <select name="type-of-user">
-            <option value="user1">Option 1</option>
-            <option value="user2">Option 2</option>
-            <option value="user3">Option 3</option>
+        <label>Tipo de Usuario
+            <select name="type-of-user">
+            <option value="user1">Seguidor</option>
+            <option value="user2">Empresa</option>
+            <option value="user3">Otro</option>
         </select>
+        </label>
+    </div>
+
+    <!--DATALIST Y OPTION-->
+    <div class="form_input">
+        <label>Referente 
+            <input list="referente" name="referente">
+            <datalist id="referente" name="type-of-user">
+                <option value="Un amigo">Danilo</option>
+                <option value="Tiktok">SoyDalto</option>
+                <option value="Un familiar">Mi hermano</option>
+                <option value="Un desconocido">El de la tienda</option>
+            </datalist>
+        </label>
+    </div>
+
+    <!--TEXTAREA-->
+    <div class="form_input">
+        <label for="descripcion">Descripcion
+            <textarea placeholder="Ingrese la descripcion..." id="descripcion"></textarea>
+        </label>
     </div>
 
     <div class="form_input">
-        <label for="descripcion">Descripcion</label>
-        <textarea placeholder="Ingrese la descripcion..." id="descripcion"></textarea>
-    </div>
-
-    <div class="form_input">
-        <label for="terminos">Acepto los terminos y condiciones</label>
-        <input type="checkbox" id="terminos" class="checkbox"></input>
+        <label for="terminos">Acepto los terminos y condiciones
+            <input type="checkbox" id="terminos" class="checkbox"></input>
+        </label>
     </div>
 </body>
 </html>
