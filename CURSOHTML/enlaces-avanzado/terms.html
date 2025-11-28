@@ -1,0 +1,450 @@
+<!--En este caso lo que hicimos fue utilizar los enlaces de una forma avanzada, especificamente realizando anclas para navegar dentro de la misma página.En este ejemplo lo que hicimos fue crear una pagina que simula terminos y condiciones y la pusimos como un enlace, dentro de esta pagina utilizamos ID y href para poder anclar partes de esta dicha pagina. Tambien aprendimos a como descargar dicha pagina como tal, haciendo uso del atributo download en el enlace. Tambien aprendimos a como enlazar un boton o accion para que cuando se oprima redireccione a un inicio de sesion como gmail.Tambien hablamos sobre rel y el uso de noopener, noreferrer y nofollow, esto es basicamente para manejar mayor seguridad a la hora de navegar entre links. -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Términos y Condiciones - CodeLearn</title>
+    <style>
+        :root {
+            --primary: #4361ee;
+            --secondary: #3a0ca3;
+            --accent: #4cc9f0;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --success: #4bb543;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f0f2f5;
+            color: var(--dark);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 0 0 25px 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        header::before {
+            content: "</>";
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 2rem;
+            opacity: 0.2;
+            font-weight: bold;
+        }
+        
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .logo-icon {
+            background-color: var(--accent);
+            width: 50px;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            transform: rotate(15deg);
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .content::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--accent));
+            border-radius: 5px 0 0 5px;
+        }
+        
+        h2 {
+            color: var(--primary);
+            margin: 30px 0 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        h2::before {
+            content: "#";
+            color: var(--accent);
+            font-weight: bold;
+        }
+        
+        h3 {
+            color: var(--secondary);
+            margin: 25px 0 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        h3::before {
+            content: "{}";
+            color: var(--accent);
+            font-size: 0.9em;
+        }
+        
+        p {
+            margin-bottom: 18px;
+        }
+        
+        ul, ol {
+            margin-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+            position: relative;
+        }
+        
+        li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: -15px;
+        }
+        
+        .code-block {
+            background-color: #2d3748;
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            border-left: 4px solid var(--accent);
+        }
+        
+        .highlight {
+            background-color: #f0f7ff;
+            padding: 20px;
+            border-left: 4px solid var(--primary);
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+            position: relative;
+        }
+        
+        .highlight::before {
+            content: "!";
+            position: absolute;
+            top: 20px;
+            left: -12px;
+            background-color: var(--primary);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 1px solid #e0e0e0;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 25px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        .btn-outline {
+            background: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        .last-updated {
+            background-color: var(--light);
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+            font-style: italic;
+            border: 1px dashed #ddd;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            header {
+                padding: 30px 0;
+            }
+            
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .logo-icon {
+                width: 40px;
+                height: 40px;
+            }
+            
+            header h1 {
+                font-size: 1.8rem;
+            }
+            
+            .content {
+                padding: 25px 20px;
+            }
+            
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+        
+        .privacy-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: var(--success);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <div class="logo-icon">{ }</div>
+                Code<span>Learn</span>
+            </div>
+            <h1>Términos y Condiciones</h1>
+            <p class="tagline">Plataforma de aprendizaje de HTML, CSS y desarrollo web</p>
+            <div class="privacy-badge">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm0 14.5a6.5 6.5 0 1 1 0-13 6.5 6.5 0 0 1 0 13z"/>
+                    <path d="M10.5 6.5L7 10l-1.5-1.5L4 10l3.5-3.5z"/>
+                </svg>
+                No recopilamos datos personales
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="last-updated">
+            <strong>Última actualización:</strong> 15 de octubre, 2023
+        </div>
+        
+        <div class="content">
+            <h2 id="introduction">Introducción</h2>
+            <p>Bienvenido a CodeLearn, la plataforma especializada en enseñar HTML, CSS y desarrollo web de forma práctica y accesible. Al utilizar nuestro sitio web, aceptas cumplir con los siguientes términos y condiciones. Si no estás de acuerdo con alguna parte de estos términos, te rogamos que no utilices nuestra plataforma.</p>
+            
+            <h2>Nuestra Filosofía</h2>
+            <p>CodeLearn se fundó con la misión de hacer que el aprendizaje del desarrollo web sea accesible para todos. Creemos en:</p>
+            <ul>
+                <li>Educación gratuita y de calidad</li>
+                <li>Privacidad del usuario como derecho fundamental</li>
+                <li>Aprendizaje práctico mediante ejemplos reales</li>
+                <li>Comunidad colaborativa y de apoyo</li>
+            </ul>
+            
+            <h2>Uso del Contenido Educativo</h2>
+            <p>Todo el contenido educativo de CodeLearn (tutoriales, ejemplos de código, ejercicios) está disponible bajo licencia Creative Commons Attribution-NonCommercial 4.0. Esto significa que puedes:</p>
+            <ul>
+                <li>Compartir y redistribuir el material en cualquier medio o formato</li>
+                <li>Adaptar y construir upon el material</li>
+            </ul>
+            <p>Con las siguientes condiciones:</p>
+            <ul>
+                <li><strong>Atribución:</strong> Debes dar crédito apropiado a CodeLearn</li>
+                <li><strong>No comercial:</strong> No puedes utilizar el material con fines comerciales</li>
+            </ul>
+            
+            <div class="code-block">
+/* Ejemplo de código educativo en CodeLearn */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+}
+            </div>
+            
+            <h2 id="privacy">Política de Privacidad</h2>
+            <p>En CodeLearn valoramos profundamente tu privacidad. Por diseño, nuestra plataforma:</p>
+            <ul>
+                <li>No requiere registro de usuario para acceder al contenido</li>
+                <li>No recopila ni almacena datos personales</li>
+                <li>No utiliza cookies de seguimiento o analytics</li>
+                <li>No comparte información con terceros</li>
+            </ul>
+            
+            <div class="highlight">
+                <p><strong>Transparencia total:</strong> CodeLearn funciona sin bases de datos de usuarios, formularios de registro o sistemas de seguimiento. Tu aprendizaje es completamente anónimo y privado.</p>
+            </div>
+            
+            <h2>Editor de Código Online</h2>
+            <p>Nuestra plataforma incluye un editor de código integrado que te permite practicar HTML y CSS directamente en el navegador. Ten en cuenta que:</p>
+            <ul>
+                <li>El código que escribas se ejecuta localmente en tu navegador</li>
+                <li>No guardamos tus ejercicios o proyectos</li>
+                <li>Para conservar tu trabajo, utiliza la función de exportación</li>
+            </ul>
+            
+            <h2>Limitación de Responsabilidad</h2>
+            <p>CodeLearn proporciona materiales educativos "tal cual" sin garantías de ningún tipo. No nos hacemos responsables de:</p>
+            <ul>
+                <li>Errores en el contenido educativo (aunque trabajamos diligentemente para evitarlos)</li>
+                <li>Consecuencias del uso de ejemplos de código en proyectos personales</li>
+                <li>Compatibilidad del código enseñado con todos los navegadores y dispositivos</li>
+            </ul>
+            
+            <h2>Propiedad Intelectual</h2>
+            <p>El diseño de la plataforma, logotipo, estructura de navegación y elementos de interfaz son propiedad exclusiva de CodeLearn. El contenido educativo sigue la licencia mencionada anteriormente.</p>
+            
+            <h2 id="contentforuser">Contenido Generado por Usuarios</h2>
+            <p>Actualmente, CodeLearn no permite la publicación de contenido por parte de usuarios. Si en el futuro implementamos esta funcionalidad, se regirá por términos específicos que se añadirán a este documento.</p>
+            
+            <h2>Enlaces a Recursos Externos</h2>
+            <p>Nuestra plataforma puede contener enlaces a recursos externos (documentación MDN, especificaciones W3C, etc.). No tenemos control sobre el contenido de estos sitios externos y no asumimos responsabilidad por ellos.</p>
+            
+            <h2>Modificaciones de los Términos</h2>
+            <p>Nos reservamos el derecho de actualizar estos términos y condiciones cuando sea necesario. Los cambios entrarán en vigor inmediatamente después de su publicación en esta página. Te recomendamos revisar periódicamente este documento.</p>
+            
+            <h2>Contacto</h2>
+            <p>Si tienes preguntas sobre estos términos o sugerencias para mejorar nuestra plataforma, puedes contactarnos a través de nuestro repositorio público en GitHub.</p>
+            
+            <div class="footer">
+                <p>© 2023 CodeLearn. Aprende HTML, CSS y desarrollo web de forma gratuita y privada.</p>
+                <div class="btn-group">
+                    <a href="#" class="btn btn-primary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z"/>
+                            <path d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z"/>
+                        </svg>
+                        Volver a la Plataforma
+                    </a>
+                    <a href="#" class="btn btn-outline">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                        </svg>
+                        Ver Código Fuente
+                    </a>
+                    <a href="#" class="btn btn-outline" download="terms.html">
+                        Descargar PDF
+                    </a>
+                    <a class="btn btn-outline" href="#privacy">Politica de Privacidad</a>
+                    <a class="btn btn-outline" href="#introduction">Introduccion</a>
+                    <a class="btn btn-outline" href="#contentforuser">Contenido para Usuarios</a>
+                    <a class="btn btn-outline" href="mailto:juan@gmail.com">Mandar un Email</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
