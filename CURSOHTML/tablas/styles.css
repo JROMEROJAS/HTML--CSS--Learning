@@ -1,0 +1,19 @@
+td, th {
+    border: 2px solid black;
+    text-align: center;
+    padding: 10px;
+    font-family: sans-serif;
+    border-radius: 5px;
+}
+
+td {
+    color: #444;
+}
+
+table {
+    width: 100%;
+    border: 2px solid black;
+    padding: 30px;
+    max-width: 500px;
+    margin: auto;
+}
