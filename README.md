@@ -1,23 +1,23 @@
-## 📚 Aprendiendo HTML y CSS
+##  Aprendiendo HTML y CSS
 Este repositorio contiene ejercicios, prácticas, ejemplos y proyectos de aprendizaje en **HTML** y **CSS**.
 
-## 🎯 Objetivo
+##  Objetivo
 Mejorar mis habilidades en el desarrollo frontend, aprender buenas prácticas y entender diferentes conceptos con el fin de completar mis conocimientos de Backend.
 
-## 🛠 Tecnologías
+##  Tecnologías
 - HTML5  
 - CSS3  
 - VS Code  
 
-## 📂 Estructura del Repositorio
+##  Estructura del Repositorio
 Este repositorio está organizado en dos carpetas principales, una para cada tecnología usada:
 
 - **CURSOHTML/** → Contiene ejercicios y ejemplos de HTML (manejo de enlaces, manejo de imágenes, listas, párrafos, etiquetas, etc).
 - **CURSOCSS/** → Contiene ejercicios y ejemplos de CSS (bordes, box-sizing, colores, fondos, gradientes, padding y margin, propiedades de texto, selectores, sombras, unidades de medida, width y height).
 
-## 📘 Conceptos básicos de HTML y CSS
+##  Conceptos básicos de HTML y CSS
 
-### 🧱 HTML – Estructura y etiquetas básicas
+###  HTML – Estructura y etiquetas básicas
 
 **Etiqueta raíz**
 - `<html></html>` → Todo lo que está dentro hace parte de la página web.
@@ -58,7 +58,7 @@ Este repositorio está organizado en dos carpetas principales, una para cada tec
 
 ---
 
-### 🎨 Introducción a CSS
+###  Introducción a CSS
 
 - **Estilos en línea** → Estilos aplicados directamente a un elemento.
 - **Clases** → Permiten asignar un nombre a los elementos para aplicar estilos.
@@ -77,7 +77,7 @@ Describe cómo se diseñan y distribuyen los elementos:
 
 ---
 
-### 🎨 Colores en CSS (HEX)
+###  Colores en CSS (HEX)
 
 - Rojo: `#FF0000`
 - Amarillo: `#FFBF00`
@@ -89,18 +89,18 @@ Describe cómo se diseñan y distribuyen los elementos:
 - Violeta: `#4400FF`
 - Morado: `#5E0063`
 
-## ✅ Lo que he aprendido
+##  Lo que he aprendido
 - Estructura semántica en HTML
 - Uso de selectores y propiedades CSS
 - Diseño con sombras y gradientes
 - Posicionamiento (Flexbox)
 - Buenas prácticas (organización de CSS y nombres claros)
 
-## 🚀 Próximos pasos
+##  Próximos pasos
 - Añadir JavaScript
 - Hacer proyectos más avanzados
 - Optimización de imágenes y mejor manejo del frontend
 
-## 📚 Recursos y referencias
+##  Recursos y referencias
 - [Soy Dalto](https://www.youtube.com/watch?v=ELSm-G201Ls)
 
